@@ -27,3 +27,5 @@ poetry install --no-root
 ```
 
 I have installed the cursor editor and I experimenting with an AI centric workflow. We will see how this goes. 
+
+I have the basic structure of the program outlined. Next time, I am now going to try to set up the database. 
