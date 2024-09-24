@@ -13,7 +13,7 @@ gmaps = googlemaps.Client(key=os.environ["GOOGLE_MAPS_API_KEY"])
 home = os.environ["HOME_ADDRESS"]
 work = os.environ["WORK_ADDRESS"]
 
-db = database('traffic.db')
+db = database('data/traffic.db')
 class Traffic: id: int; origin: str; destination: str; timestamp: datetime; travel_time: int;
 traffic_table = db.create(Traffic)
 
