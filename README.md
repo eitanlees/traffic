@@ -6,10 +6,32 @@ I want to know how long it will take me to drive to work.
 
 ## DEV LOG
 
-### 2024-09-24 (Setup database):
+### 2024-09-24 (MVP 1):
 
 I have setup the database and added some comments to the code. I think we are in a good place to experiment
 with running on an EC2 instance. 
+
+There are two costs to consider:
+1. Google Maps API
+2. EC2 Instance
+
+#### Google Maps API
+I am using the [Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/usage-and-billing) which costs 0.005 USD per SKU. I think in my case I am making two calls to the API every 5 minutes between the hours of 6am and 8pm. Lets run the numbers
+
+```
+2 * 0.005 (Cost/API) * 12 (API/Hour) * 13 (Hours/Day) * 5 (Days) = $7.80 
+```
+
+The Google Maps Platform offers a $200 [monthly credit](https://developers.google.com/maps/billing-and-pricing/billing#monthly-credit) so I should be in the clear. 
+
+#### AWS EC2
+The `t2.nano` instance priced at 0.0058 per hour to run. A naive approach would be to spin up an EC2 instance and run the program all week. 
+
+```
+0.0058 (Cost/Hour) * 24 (Hour/Day) * 5 (Days) = $ 0.7
+```
+
+Pretty cheap! It's a bit wastful running the instance all night, but scheduling seems like more of a headache than its worth for now. I can revisit the issue if I scale. 
 
 ### 2024-09-23 (Inital setup):
 
