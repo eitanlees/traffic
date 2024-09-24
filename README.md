@@ -6,6 +6,11 @@ I want to know how long it will take me to drive to work.
 
 ## DEV LOG
 
+### 2024-09-24 (Setup database):
+
+I have setup the database and added some comments to the code. I think we are in a good place to experiment
+with running on an EC2 instance. 
+
 ### 2024-09-23 (Inital setup):
 
 Aaahhh that fresh repository smell. Let's see how long it takes to muck things up.
