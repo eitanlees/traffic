@@ -3,7 +3,7 @@ import time
 import schedule
 import logging
 from datetime import datetime
-# from fastlite import database
+from fastlite import database
 
 import googlemaps
 
@@ -13,9 +13,9 @@ gmaps = googlemaps.Client(key=os.environ["GOOGLE_MAPS_API_KEY"])
 home = os.environ["HOME_ADDRESS"]
 work = os.environ["WORK_ADDRESS"]
 
-# TODO: Set up database
-# class Traffic: 
-# db = database('traffic.db')
+db = database('traffic.db')
+class Traffic: id: int; origin: str; destination: str; timestamp: datetime; travel_time: int;
+traffic_table = db.create(Traffic)
 
 def travel_time(origin, destination, dt):
     trip = gmaps.distance_matrix(origin, destination, departure_time=dt) 
@@ -31,15 +31,21 @@ def traffic():
     dt = datetime.now()
     current_hour = dt.hour
     if 6 <= current_hour <= 20:
+        # Home to work
         home_to_work = travel_time(home, work, dt)
+        traffic_table.insert(Traffic(origin=home, destination=work, timestamp=dt, travel_time=home_to_work))
+
+        # Work to home
         work_to_home = travel_time(work, home, dt)
+        traffic_table.insert(Traffic(origin=work, destination=home, timestamp=dt, travel_time=work_to_home))
+
         logging.info(f"↗ {home_to_work//60} min / ↘ {work_to_home//60} min")
     else:
         logging.info("Outside of tracking hours (6:00 - 20:59)")
 
 if __name__ == "__main__":
     logging.info("-------------------")
-    logging.info("- Traffic Tacking -")
+    logging.info("- Traffic Tracking -")
     logging.info("-------------------")
 
     delay = calculate_delay()
