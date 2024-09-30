@@ -6,6 +6,10 @@ I want to know how long it will take me to drive to work.
 
 ## DEV LOG
 
+### 2024-09-29 (First Run)
+
+Well decided to just run the program from my personal computer as I won't be using it much this week anyway. I plan to leave it up and running all week and hopefully I can get some interesting data. 
+
 ### 2024-09-24 (MVP 1):
 
 I have setup the database and added some comments to the code. I think we are in a good place to experiment
