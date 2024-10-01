@@ -52,7 +52,7 @@ def calculate_delay():
 def traffic():
     dt = datetime.now()
     current_hour = dt.hour
-    if 6 <= current_hour < 20:
+    if 6 <= current_hour <= 20:
         # Home to work
         home_to_work = travel_time(home, work, dt)
         traffic_table.insert(
