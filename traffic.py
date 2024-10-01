@@ -1,10 +1,11 @@
-from datetime import datetime
-from fastlite import database
-import googlemaps
 import logging
 import os
-import schedule
 import time
+from datetime import datetime
+
+import googlemaps
+import schedule
+from fastlite import database
 
 # Setup logging
 logging.basicConfig(
