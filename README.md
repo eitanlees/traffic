@@ -11,7 +11,7 @@ I want to know how long it will take me to drive to work.
 So the first run was a success!
 I used my personal computer so the compute costs were zero.
 Looking at the Google Cloud Dashboard it looks like I racked up 2,154 API calls which amounted to $21.55.
-Well within the monthly credit.
+Well within the monthly credit but oddly higher than my estimate. I will investigate later. 
 
 Here are the fruits of my labor!
 
