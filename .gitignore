@@ -1,3 +1,6 @@
+# Other random files I want to ignore
+.DS_Store
+
 # A place to experiment
 experiments/
 

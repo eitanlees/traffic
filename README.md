@@ -6,6 +6,23 @@ I want to know how long it will take me to drive to work.
 
 ## DEV LOG
 
+### 2024-10-08 (Data!)
+
+So the first run was a success!
+I used my personal computer so the compute costs were zero.
+Looking at the Google Cloud Dashboard it looks like I racked up 2,154 API calls which amounted to $21.55.
+Well within the monthly credit.
+
+Here are the fruits of my labor!
+
+#### Daily Traffic 
+![image info](./img/daily-traffic.png)
+
+#### Average Traffic
+![image info](./img/average-traffic.png)
+
+I guess leaving at 7AM is a good call, and 4PM beats most of the afternoon traffic. 
+
 ### 2024-09-29 (First Run)
 
 Well decided to just run the program from my personal computer as I won't be using it much this week anyway. I plan to leave it up and running all week and hopefully I can get some interesting data. 
